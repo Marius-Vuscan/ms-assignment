@@ -1,0 +1,6 @@
+@Assignment.ServiceB_HostAddress = http://localhost:32769
+
+GET {{Assignment.ServiceB_HostAddress}}/houses/
+Accept: application/json
+
+###
