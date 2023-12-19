@@ -1,6 +1,6 @@
-@Assignment.ServiceA_HostAddress = http://localhost:5033
+@Assignment.ServiceA_HostAddress = http://localhost:32775
 
-GET {{Assignment.ServiceA_HostAddress}}/weatherforecast/
+GET {{Assignment.ServiceA_HostAddress}}/bitcoindata/
 Accept: application/json
 
 ###
