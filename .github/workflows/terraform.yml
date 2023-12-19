@@ -60,7 +60,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./infra/modules/resources-configuration
+        working-directory: ${var.RESOURCES_CONFIGURATION_FOLDER}
 
     steps:
     - name: Checkout
