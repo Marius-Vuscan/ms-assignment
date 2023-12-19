@@ -47,15 +47,9 @@ name: 'Terraform'
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - '${{ env.RESOURCES_CONFIGURATION_FOLDER }}/*'
 
 permissions:
   contents: read
-  
-defaults:
-  run:
-    working-directory: '${{ env.RESOURCES_CONFIGURATION_FOLDER }}'
 
 jobs:
   terraform:
@@ -66,6 +60,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: '${{ env.RESOURCES_CONFIGURATION_FOLDER }}'
 
     steps:
     - name: Checkout
@@ -75,14 +70,14 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init -chdir="${{ env.RESOURCES_CONFIGURATION_FOLDER }}"
+      run: terraform init 
 
     - name: Terraform Format
-      run: terraform fmt -check -chdir="${{ env.RESOURCES_CONFIGURATION_FOLDER }}"
+      run: terraform fmt -check
 
     - name: Terraform Plan
-      run: terraform plan -input=false -chdir="${{ env.RESOURCES_CONFIGURATION_FOLDER }}"
+      run: terraform plan -input=false
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false -chdir="${{ env.RESOURCES_CONFIGURATION_FOLDER }}"
+      run: terraform apply -auto-approve -input=false 
