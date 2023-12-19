@@ -88,3 +88,7 @@ output "client_secret" {
   value     = nonsensitive(azuread_service_principal_password.app.value)
   sensitive = false
 }
+
+output "tenant_id" {
+  value = azuread_service_principal.app.application_tenant_id
+}

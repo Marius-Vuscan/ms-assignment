@@ -8,3 +8,8 @@
 - run the init command: ```terraform init```
 - replace the subscription-id placeholder and run the plan command: ```terraform plan -out sp.tfplan -var="subscription_id=<subscription-id>"```
 - replace the subscription-id placeholder and run the apply command: ```terraform apply "sp.tfplan"```
+- once the service principal is created, it will return some data like client_id, client_secret and tenant_id for which we will have to create github secrets: 
+  - ARM_CLIENT_ID : client_id
+  - ARM_CLIENT_SECRET: client_secret
+  - ARM_SUBSCRIPTION_ID: subscription-id
+  - ARM_TENANT_ID: tenant_id
