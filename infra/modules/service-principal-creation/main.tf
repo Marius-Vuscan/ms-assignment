@@ -70,12 +70,14 @@ resource "azurerm_role_assignment" "aks_role_assignment" {
   scope                = "/subscriptions/${var.subscription_id}"
   role_definition_name = azurerm_role_definition.aks_role.name
   principal_id         = azuread_service_principal.app.id
+  depends_on           = [azurerm_role_definition.aks_role]
 }
 
 resource "azurerm_role_assignment" "acr_role_assignment" {
   scope                = "/subscriptions/${var.subscription_id}"
   role_definition_name = azurerm_role_definition.acr_role.name
   principal_id         = azuread_service_principal.app.id
+  depends_on           = [azurerm_role_definition.acr_role]
 }
 
 output "client_id" {
@@ -83,6 +85,6 @@ output "client_id" {
 }
 
 output "client_secret" {
-  value     = azuread_service_principal_password.app.value
-  sensitive = true
+  value     = nonsensitive(azuread_service_principal_password.app.value)
+  sensitive = false
 }
