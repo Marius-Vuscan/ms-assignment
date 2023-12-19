@@ -1,0 +1,24 @@
+assembly-versioning-scheme: MajorMinorPatch
+assembly-informational-format: "{SemVer}"
+mode: MainLine
+tag-prefix: "[vV]"
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+commit-message-incrementing: Enabled
+branches:
+  master:
+    regex: ^master
+    tag: ""
+  support:
+    regex: ^support[/-]
+    tag: ""
+  feature:
+    regex: ^features?[/-]
+    tag: unstable
+  pull-request:
+    regex: ^(pull|pull\-requests|pr)[/-]
+    tag: PullRequest
+    tag-number-pattern: '[/-](?<number>\d+)[-/]'
+ignore:
+  sha: []
