@@ -70,14 +70,14 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init ${{ variables.RESOURCES_CONFIGURATION_FOLDER }}
+      run: terraform init ${{ env.RESOURCES_CONFIGURATION_FOLDER }}
 
     - name: Terraform Format
-      run: terraform fmt -check ${{ variables.RESOURCES_CONFIGURATION_FOLDER }}
+      run: terraform fmt -check ${{ env.RESOURCES_CONFIGURATION_FOLDER }}
 
     - name: Terraform Plan
-      run: terraform plan -input=false ${{ variables.RESOURCES_CONFIGURATION_FOLDER }}
+      run: terraform plan -input=false ${{ env.RESOURCES_CONFIGURATION_FOLDER }}
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false ${{ variables.RESOURCES_CONFIGURATION_FOLDER }}
+      run: terraform apply -auto-approve -input=false ${{ env.RESOURCES_CONFIGURATION_FOLDER }}
