@@ -60,7 +60,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: '${{ env.RESOURCES_CONFIGURATION_FOLDER }}'
+        working-directory: ${{ env.RESOURCES_CONFIGURATION_FOLDER }}
 
     steps:
     - name: Checkout
