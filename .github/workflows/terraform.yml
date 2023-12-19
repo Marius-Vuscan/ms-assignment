@@ -47,10 +47,15 @@ name: 'Terraform'
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+    paths:
+      - '${{ env.RESOURCES_CONFIGURATION_FOLDER }}/*'
 
 permissions:
   contents: read
+  
+defaults:
+  run:
+    working-directory: '${{ env.RESOURCES_CONFIGURATION_FOLDER }}'
 
 jobs:
   terraform:
