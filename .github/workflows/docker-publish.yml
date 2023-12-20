@@ -36,6 +36,9 @@ jobs:
     - name: Display GitVersion outputs (step output)
       run: |
         echo "SemVer: ${{ steps.gitversion-step.outputs.semVer }}"
+        outputs:
+    outputs:
+      semVer: ${{ steps.gitversion-step.outputs.semVer }}
 
   servicea:
     runs-on: ubuntu-latest
