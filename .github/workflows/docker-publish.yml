@@ -96,4 +96,3 @@ jobs:
     - name: Push Docker image
       if: github.event_name != 'pull_request'
       run: docker push ${{ secrets.ACR_LOGIN_SERVER }}/serviceb:${{ needs.gitversion.outputs.versionout }}
-
