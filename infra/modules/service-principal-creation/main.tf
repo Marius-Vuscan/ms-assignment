@@ -11,16 +11,17 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  features {}
-}
-
-provider "azuread" {
-}
-
 variable "subscription_id" {
   description = "Azure subscription ID"
   type        = string
+}
+
+provider "azurerm" {
+  features {}
+  subscription_id = var.subscription_id
+}
+
+provider "azuread" {
 }
 
 resource "azuread_application" "app" {
@@ -152,8 +153,8 @@ data "azurerm_storage_account_sas" "state" {
     list    = true
     add     = true
     create  = true
-    update  = false
-    process = false
+    update  = true
+    process = true
     filter  = true
     tag     = true
   }
