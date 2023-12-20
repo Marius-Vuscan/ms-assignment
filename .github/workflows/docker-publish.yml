@@ -45,11 +45,11 @@ jobs:
     needs: gitversion
     defaults:
       run:
-        working-directory: './proj/Assignment/Assignment.ServiceA'
+        working-directory: './proj/Assignment'
     steps:
     - name: Checkout
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
     - name: Build the Docker image for service A
-      run: docker build . --tag servicea:${{ needs.gitversion.outputs.versionout }}
+      run: docker build . -f './proj/Assignment/Assignment.ServiceA/Dockerfile' --tag servicea:${{ needs.gitversion.outputs.versionout }}
