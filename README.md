@@ -8,3 +8,4 @@
      -  The service principal configuration for authorizing the Github pipeline to execute Terraform commands: [service-principal-creation](/docs/service-principal-creation.md).
      -  The resources configuration that is automated using the Github pipelines: [resources-configuration](/docs/resources-configuration.md).
 
+
