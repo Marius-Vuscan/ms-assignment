@@ -1,3 +1,4 @@
+name: Docker Image CI
 
 on:
   push:
@@ -34,4 +35,3 @@ jobs:
       run: |
         echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
 
-name: ${{ steps.gitversion.outputs.semVer }} - ${{ steps.gitversion.outputs.commit_message }}
