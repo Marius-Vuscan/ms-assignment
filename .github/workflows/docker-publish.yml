@@ -31,14 +31,15 @@ jobs:
 
   servicea:
     runs-on: ubuntu-latest
+    needs: gitversion
     defaults:
       run:
         shell: bash
-        working-directory: proj/Assignment/Assignment.ServiceA
+        working-directory: 'proj/Assignment/Assignment.ServiceA'
     steps:
     - name: Display GitVersion outputs (step output)
       run: |
         echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
 
     - name: Build the Docker image for service A
-      run: docker build . --file proj/Assignment/Assignment.ServiceA/Dockerfile --tag servicea:${{ steps.gitversion.outputs.semVer }}
+      run: docker build . --file Dockerfile --tag servicea:${{ steps.gitversion.outputs.semVer }}
