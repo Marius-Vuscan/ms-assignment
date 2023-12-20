@@ -66,6 +66,18 @@ resource "azurerm_role_definition" "acr_role" {
   }
 }
 
+resource "azurerm_role_definition" "rg_role" {
+  name        = "Custom_RG_Operator"
+  description = "Custom role for RG operator"
+  scope       = "/subscriptions/${var.subscription_id}"
+  permissions {
+    actions = [
+      "Microsoft.Resources/subscriptions/resourcegroups/*"
+    ]
+    not_actions = []
+  }
+}
+
 resource "azurerm_role_assignment" "aks_role_assignment" {
   scope                = "/subscriptions/${var.subscription_id}"
   role_definition_name = azurerm_role_definition.aks_role.name
@@ -78,6 +90,13 @@ resource "azurerm_role_assignment" "acr_role_assignment" {
   role_definition_name = azurerm_role_definition.acr_role.name
   principal_id         = azuread_service_principal.app.id
   depends_on           = [azurerm_role_definition.acr_role]
+}
+
+resource "azurerm_role_assignment" "rg_role_assignment" {
+  scope                = "/subscriptions/${var.subscription_id}"
+  role_definition_name = azurerm_role_definition.rg_role.name
+  principal_id         = azuread_service_principal.app.id
+  depends_on           = [azurerm_role_definition.rg_role]
 }
 
 output "client_id" {
