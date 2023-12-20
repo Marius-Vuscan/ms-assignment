@@ -8,8 +8,7 @@ on:
 
 jobs:
 
-  build:
-
+  build-and-push-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,3 +34,5 @@ jobs:
       run: |
         echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
 
+    - name: Build the Docker image for service A
+      run: docker build . --file proj/Assignment/Assignment.ServiceA.Dockerfile --tag serviceA:${{ steps.gitversion.outputs.semVer }}
