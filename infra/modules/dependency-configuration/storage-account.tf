@@ -49,15 +49,3 @@ data "azurerm_storage_account_sas" "state" {
     tag     = false
   }
 }
-
-output "storage_account_name" {
-  value = azurerm_storage_account.sa.name
-}
-
-output "resource_group_name" {
-  value = azurerm_resource_group.config-rg.name
-}
-
-output "sas_token" {
-  value = nonsensitive(data.azurerm_storage_account_sas.state.sas)
-}
