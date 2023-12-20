@@ -36,6 +36,7 @@ resource "azuread_service_principal_password" "app" {
   end_date_relative    = "800h"
 }
 
+/*
 resource "azurerm_role_definition" "aks_role" {
   name        = "Custom_AKS_Operator"
   description = "Custom role for AKS operator"
@@ -97,6 +98,13 @@ resource "azurerm_role_assignment" "rg_role_assignment" {
   role_definition_name = azurerm_role_definition.rg_role.name
   principal_id         = azuread_service_principal.app.id
   depends_on           = [azurerm_role_definition.rg_role]
+}
+*/
+
+resource "azurerm_role_assignment" "assign_contributor_role" {
+  principal_id         = azuread_service_principal.app.id
+  role_definition_name = "Contributor"
+  scope                = "/subscriptions/${var.subscription_id}"
 }
 
 output "client_id" {
