@@ -40,7 +40,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: '${{ github.workspace }}/proj/Assignment/Assignment.ServiceA'
+        working-directory: './infra/modules/resources-configuration'
     steps:
     - name: Build the Docker image for service A
       run: docker build . --file Dockerfile --tag servicea:${{ steps.gitversion.outputs.semVer }}
