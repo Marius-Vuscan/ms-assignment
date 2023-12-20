@@ -39,7 +39,7 @@ resource "azurerm_container_registry" "acr" {
   location            = azurerm_resource_group.rg.location
   sku                 = "Basic"
 
-  admin_enabled = false
+  admin_enabled = true
 }
 
 resource "github_actions_secret" "acr_login_server" {
