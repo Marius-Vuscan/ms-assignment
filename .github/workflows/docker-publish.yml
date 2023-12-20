@@ -43,8 +43,7 @@ jobs:
     needs: gitversion
     defaults:
       run:
-        shell: bash
-        working-directory: './infra/modules/resources-configuration'
+        working-directory: './proj/Assignment/Assignment.ServiceA'
     steps:
     - name: Build the Docker image for service A
       run: docker build . --file Dockerfile --tag servicea:${{ steps.gitversion.outputs.semVer }}
