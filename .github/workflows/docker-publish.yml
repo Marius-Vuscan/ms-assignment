@@ -52,4 +52,4 @@ jobs:
       with:
         fetch-depth: 0
     - name: Build the Docker image for service A
-      run: docker build . -f './proj/Assignment/Assignment.ServiceA/Dockerfile' --tag servicea:${{ needs.gitversion.outputs.versionout }}
+      run: docker build . -f 'Assignment.ServiceA/Dockerfile' --tag servicea:${{ needs.gitversion.outputs.versionout }}
