@@ -50,4 +50,4 @@ jobs:
       with:
         fetch-depth: 0
     - name: Build the Docker image for service A
-      run: docker build . --tag servicea:${{ needs.gitversion.gitversion-step.outputs.semVer }}
+      run: docker build . --tag servicea:${{ gitversion.gitversion-step.outputs.semVer }}
