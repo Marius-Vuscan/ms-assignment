@@ -97,4 +97,3 @@ jobs:
       if: github.event_name != 'pull_request'
       run: docker push ${{ secrets.ACR_LOGIN_SERVER }}/serviceb:${{ needs.gitversion.outputs.versionout }}
 
-
