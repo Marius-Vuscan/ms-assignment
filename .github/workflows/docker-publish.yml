@@ -35,4 +35,4 @@ jobs:
         echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
 
     - name: Build the Docker image for service A
-      run: docker build . --file proj/Assignment/Assignment.ServiceA.Dockerfile --tag servicea:${{ steps.gitversion.outputs.semVer }}
+      run: docker build . --file proj/Assignment/Assignment.ServiceA/Dockerfile --tag servicea:${{ steps.gitversion.outputs.semVer }}
