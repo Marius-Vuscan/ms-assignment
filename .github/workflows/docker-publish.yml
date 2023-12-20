@@ -7,8 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  build-and-push-image:
+  gitversion:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,6 +29,13 @@ jobs:
         useConfigFile: true
         configFilePath: GitVersion.yml
 
+  servicea:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: proj/Assignment/Assignment.ServiceA
+    steps:
     - name: Display GitVersion outputs (step output)
       run: |
         echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
