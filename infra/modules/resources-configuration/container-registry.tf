@@ -11,9 +11,6 @@ terraform {
   }
 
   backend "azurerm" {
-    storage_account_name = "msassignmentconfigsa"
-    container_name = "terraform-state"
-    key = "terraform.tfstate"
   }
 }
 
