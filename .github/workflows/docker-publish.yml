@@ -27,7 +27,7 @@ jobs:
         preferLatestVersion: true
     
     - name: Determine Version
-      id:   gitversion
+      id:   gitversion-step
       uses: gittools/actions/gitversion/execute@v0
       with:
         useConfigFile: true
@@ -35,7 +35,7 @@ jobs:
 
     - name: Display GitVersion outputs (step output)
       run: |
-        echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
+        echo "SemVer: ${{ steps.gitversion-step.outputs.semVer }}"
 
   servicea:
     runs-on: ubuntu-latest
@@ -50,4 +50,4 @@ jobs:
       with:
         fetch-depth: 0
     - name: Build the Docker image for service A
-      run: docker build . --tag servicea:${{ steps.gitversion.outputs.semVer }}
+      run: docker build . --tag servicea:${{ needs.gitversion.gitversion-step.outputs.semVer }}
