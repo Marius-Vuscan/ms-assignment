@@ -3,6 +3,8 @@ name: 'Terraform'
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - infra/modules/resources-configuration/**
 
 permissions:
   contents: read
