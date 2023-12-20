@@ -32,7 +32,7 @@ jobs:
 
     - name: Display GitVersion outputs (step output)
       run: |
-        echo "Major: ${{ steps.gitversion.outputs.major }}"
+        echo "Major: ${{ steps.determine-version.outputs.major }}"
         echo "Minor: ${{ steps.gitversion.outputs.minor }}"
         echo "Patch: ${{ steps.gitversion.outputs.patch }}"
         echo "PreReleaseTag: ${{ steps.gitversion.outputs.preReleaseTag }}"
