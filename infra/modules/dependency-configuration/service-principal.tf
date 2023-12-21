@@ -16,3 +16,9 @@ resource "azurerm_role_assignment" "assign_contributor_role" {
   role_definition_name = "Contributor"
   scope                = "/subscriptions/${var.subscription_id}"
 }
+
+resource "azurerm_role_assignment" "assign_uaa_role" {
+  principal_id         = azuread_service_principal.app.id
+  role_definition_name = "User Access Administrator"
+  scope                = "/subscriptions/${var.subscription_id}"
+}
