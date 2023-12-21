@@ -38,6 +38,6 @@ resource "azurerm_role_assignment" "aks_acrpull" {
 resource "github_actions_secret" "aks_kube_config" {
   repository      = "ms-assignment"
   secret_name     = "AKS_KUBE_CONFIG"
-  plaintext_value = azurerm_kubernetes_cluster.aks.kube_config
+  plaintext_value = base64encode(azurerm_kubernetes_cluster.aks.kube_config_raw)
 }
 
