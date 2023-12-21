@@ -37,8 +37,12 @@ jobs:
       env:
         KUBE_CONFIG: ${{ secrets.AKS_KUBE_CONFIG }}
 
-    - name: Set up Helm
+    - name: Install Helm
       uses: azure/setup-helm@v3
+
+    - name: Build Helm dependencies
+      run: |
+        helm dependency build ./helm/apis-umbrella
 
     - name: Deploy to Kubernetes
       run: |
