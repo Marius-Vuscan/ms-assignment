@@ -27,6 +27,7 @@ serviceAccount:
 
 podAnnotations: {}
 podLabels: {}
+labels: "servicea"
 
 podSecurityContext:
   {}
@@ -95,3 +96,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+networkpolicy:
+  name: "deny-ingress-to-servicea"
+  labels: "servicea"
