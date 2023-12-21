@@ -79,4 +79,4 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        helm upgrade --install apis-umbrella-release-${{ needs.gitversion.outputs.versionout }} ./helm/apis-umbrella
+        helm upgrade --install apis-umbrella-release ./helm/apis-umbrella
