@@ -23,7 +23,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - uses: mirzakhany/helm-install-action@v1
+    - name: Install helm and kubectl
+      uses: mirzakhany/install-helm-action@v1    
       with:
         k8s_config: ${{ secrets.AKS_KUBE_CONFIG }}
 
