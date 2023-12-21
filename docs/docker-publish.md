@@ -15,5 +15,5 @@
     - pushing the image
 
 # When is the pipeline executed?
-- On every push to the main.
-- The docker actions are skipped if we are talking about a PR.
+- When changes to the 'proj folder are done.
+- The service jobs are skipped if we are talking about a PR.

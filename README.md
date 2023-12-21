@@ -14,4 +14,3 @@
       - Used to build images and publish them to the registry. More details about this: [docker-publish](/docs/docker-publish.md)
     - terraform
       - Used to automate the resource configuration. More details about this: [terraform-automatic](/docs/terraform-automatic.md)
-- Known issues: [known-issues](/docs/known-issues.md)
