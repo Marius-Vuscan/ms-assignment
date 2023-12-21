@@ -1,10 +1,10 @@
 apiVersion: "networking.k8s.io/v1"
 kind: "NetworkPolicy"
 metadata:
-  name: {{ include "serviceb.networkpolicy.name" . }}
+  name: {{ .Values.networkpolicy.name }}
 spec:
   podSelector:
     matchLabels:
-      app: {{ include "serviceb.networkpolicy.labels" . }}
+      app: {{ .Values.networkpolicy.name }}
   policyTypes:
   - Ingress
