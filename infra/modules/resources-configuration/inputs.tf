@@ -20,5 +20,5 @@ variable "aks_dns_prefix" {
 
 variable "aks_node_pool_vm_size" {
   description = "VM size for the default node pool"
-  default     = "standard_b2pts_v2"
+  default     = "Standard_D2_v2"
 }
