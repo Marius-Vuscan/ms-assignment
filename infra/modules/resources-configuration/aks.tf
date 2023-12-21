@@ -1,9 +1,3 @@
-resource "azurerm_role_assignment" "aks_acrpull" {
-  scope                = azurerm_container_registry.acr.id
-  role_definition_name = "AcrPull"
-  principal_id         = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity.0.object_id
-}
-
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
   name                              = var.aks_cluster_name
   kubernetes_version                = "1.28.3"
@@ -32,4 +26,10 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   tags = {
     environment = "dev"
   }
+}
+
+resource "azurerm_role_assignment" "aks_acrpull" {
+  scope                = azurerm_container_registry.acr.id
+  role_definition_name = "AcrPull"
+  principal_id         = azurerm_kubernetes_cluster.aks_cluster.identity.0.principal_id
 }
