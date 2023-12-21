@@ -35,3 +35,9 @@ resource "azurerm_role_assignment" "aks_acrpull" {
   depends_on           = [azurerm_kubernetes_cluster.aks, azurerm_container_registry.acr]
 }
 
+resource "github_actions_secret" "aks_kube_config" {
+  repository      = "ms-assignment"
+  secret_name     = "AKS_KUBE_CONFIG"
+  plaintext_value = azurerm_kubernetes_cluster.aks.kube_config_raw
+}
+
