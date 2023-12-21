@@ -99,4 +99,4 @@ affinity: {}
 
 networkpolicy:
   name: "deny-ingress-to-servicea"
-  labels: "servicea"
+  label: "servicea"
