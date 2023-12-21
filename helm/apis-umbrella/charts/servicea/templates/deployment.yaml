@@ -40,18 +40,24 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          {{- if .Values.health.start.endpoint }}
           startupProbe:
             httpGet:
-              path: /
+              path: {{ .Values.health.start.endpoint }}
               port: {{ .Values.service.port }}
+          {{- end }}
+          {{- if .Values.health.live.endpoint }}
           livenessProbe:
             httpGet:
-              path: /
+              path: {{ .Values.health.live.endpoint }}
               port: {{ .Values.service.port }}
+          {{- end }}
+          {{- if .Values.health.ready.endpoint }}
           readinessProbe:
             httpGet:
-              path: /
+              path: {{ .Values.health.ready.endpoint }}
               port: {{ .Values.service.port }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
