@@ -1,0 +1,16 @@
+apiVersion: v2
+name: apis-umbrella
+description: An umbrella Helm chart for the two apis and nginx
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: nginx-ingress
+    version: "1.0.0"
+    repository: "https://kubernetes.github.io/ingress-nginx"
+  - name: servicea
+    version: "0.1.0"
+    repository: "file://.charts/servicea"
+  - name: serviceb
+    version: "0.1.0"
+    repository: "file://.charts/serviceb"
