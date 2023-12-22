@@ -56,7 +56,7 @@ ingress:
     - host: "*.20.76.77.134.nip.io"
       paths:
         - path: /servicea
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
