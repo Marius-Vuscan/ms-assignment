@@ -3,7 +3,10 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 
 USER root
-RUN apt-get update && apt-get install -y iputils-ping
+RUN apt-get update && \
+    apt-get install -y iputils-ping curl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 USER app
 
 WORKDIR /app
