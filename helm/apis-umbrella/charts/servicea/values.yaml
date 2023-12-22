@@ -55,15 +55,9 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: servicea-host.com
-      http:
-        paths:
-          - pathType: Prefix
-            backend:
-              service:
-                name: apis-umbrella-release-servicea
-                port:
-                  number: 80
-            path: /
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
