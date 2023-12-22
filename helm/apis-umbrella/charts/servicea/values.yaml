@@ -70,6 +70,12 @@ resources:
     cpu: 100m
     memory: 128Mi
 
+env:
+  - name: ASPNETCORE_ENVIRONMENT
+    value: Production
+  - name: ASPNETCORE_URLS
+    value: http://+:80;http://+:81
+
 autoscaling:
   enabled: false
   minReplicas: 1
