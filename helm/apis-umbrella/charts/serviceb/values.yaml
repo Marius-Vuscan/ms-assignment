@@ -54,7 +54,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: servicea-host.com
+    - host: serviceb-host.com
       paths:
         - path: /
           pathType: ImplementationSpecific
