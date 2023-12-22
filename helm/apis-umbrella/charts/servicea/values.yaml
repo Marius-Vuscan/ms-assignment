@@ -53,9 +53,9 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: servicea-host.com
+    - host: 20.76.77.134
       paths:
-        - path: /
+        - path: /servicea
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
