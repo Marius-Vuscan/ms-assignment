@@ -53,7 +53,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: "*"
+    - host: "*.nip.io"
       paths:
         - path: /serviceb
           pathType: Prefix
