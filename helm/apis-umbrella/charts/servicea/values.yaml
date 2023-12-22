@@ -53,7 +53,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: "*.20.76.77.134.nip.io"
+    - host: "20.76.77.134"
       paths:
         - path: /servicea
           pathType: Prefix
