@@ -53,6 +53,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
     # kubernetes.io/tls-acme: "true"
   hosts:
+    - host: "msa.testmar.io"
       paths:
         - path: /servicea
           pathType: Prefix
