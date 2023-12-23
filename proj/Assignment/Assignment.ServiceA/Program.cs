@@ -18,8 +18,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.MapGet("/bitcoindata", (IDataProvider dataProvider) =>
 {
     return Results.Ok(new
