@@ -1,5 +1,6 @@
-controller:
-  service:
-    annotations:
-      service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-namespaceOverride: nginx
+ingress-nginx:
+  controller:
+    service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  namespaceOverride: nginx
