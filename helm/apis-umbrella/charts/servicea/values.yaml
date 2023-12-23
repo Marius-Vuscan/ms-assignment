@@ -98,7 +98,7 @@ tolerations: []
 affinity: {}
 
 networkpolicy:
-  name: "deny-ingress-to-servicea"
+  name: "allow-all-except-serviceb"
   ingress:
     - from:
         # Allow traffic from all pods in the namespace except those labeled as serviceb
