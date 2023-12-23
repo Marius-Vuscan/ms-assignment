@@ -15,4 +15,4 @@
     - terraform
       - Used to automate the resource configuration. More details about this: [terraform-automatic](/docs/terraform-automatic.md)
     - deploy to kubernetes
-      - Used to deploy the services to Kubernetes using Helm. More details about this: [terraform-automatic](/docs/kubernetes-configuration.md)
+      - Used to deploy the services to Kubernetes using Helm. More details about this: [kubernetes-configuration](/docs/kubernetes-configuration.md)
