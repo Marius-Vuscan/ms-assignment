@@ -52,7 +52,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - paths:
-        - path: /servicea/(.*)
+        - path: /servicea
           pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
@@ -99,3 +99,4 @@ affinity: {}
 
 networkpolicy:
   name: "deny-ingress-to-servicea"
+

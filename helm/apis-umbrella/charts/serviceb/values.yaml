@@ -52,7 +52,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - paths:
-        - path: /serviceb/(.*)
+        - path: /serviceb
           pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
