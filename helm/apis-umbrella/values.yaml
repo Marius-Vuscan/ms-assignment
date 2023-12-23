@@ -3,4 +3,3 @@ ingress-nginx:
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-  namespaceOverride: nginx-ingress
