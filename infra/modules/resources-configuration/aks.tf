@@ -21,6 +21,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   network_profile {
     network_plugin    = "azure"
     load_balancer_sku = "standard"
+    network_policy    = "calico"
   }
 
   tags = {
@@ -40,4 +41,3 @@ resource "github_actions_secret" "aks_kube_config" {
   secret_name     = "AKS_KUBE_CONFIG"
   plaintext_value = base64encode(azurerm_kubernetes_cluster.aks.kube_config_raw)
 }
-

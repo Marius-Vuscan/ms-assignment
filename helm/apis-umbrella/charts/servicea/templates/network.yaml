@@ -1,10 +1,12 @@
 apiVersion: "networking.k8s.io/v1"
 kind: "NetworkPolicy"
 metadata:
-  name: {{ include "servicea.networkpolicy.name" . }}
+  name: {{ .Values.networkpolicy.name }}
 spec:
   podSelector:
     matchLabels:
-      app: {{ include "servicea.networkpolicy.labels" . }}
+      {{- include "servicea.selectorLabels" . | nindent 6 }}
   policyTypes:
   - Ingress
+  ingress:
+    {{- toYaml .Values.networkpolicy.ingress | nindent 4 }}
