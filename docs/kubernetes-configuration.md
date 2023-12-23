@@ -30,3 +30,5 @@
     This request will fail as service b should not be able to call service a.
   - Service
     - Of type ClusterIP to not be exposed directly outside the cluster but through nginx.
+  - Service account and HorizontalPodAutoscaler
+    - Those were part of the template but were not a specific requirement of the assignment. Some testing was done with them and were left in the repo.
