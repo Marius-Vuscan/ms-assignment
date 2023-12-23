@@ -2,7 +2,7 @@ apiVersion: v2
 name: apis-umbrella
 description: An umbrella Helm chart for the two apis and nginx
 type: application
-version: 0.1.42
+version: 0.1.43
 
 dependencies:
   - name: ingress-nginx
