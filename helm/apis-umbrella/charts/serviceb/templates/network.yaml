@@ -5,6 +5,8 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: {{ .Values.networkpolicy.label }}
+      {{- include "serviceb.selectorLabels" . | nindent 6 }}
   policyTypes:
   - Ingress
+  ingress:
+    {{- toYaml .Values.networkpolicy.ingress | nindent 4 }}
