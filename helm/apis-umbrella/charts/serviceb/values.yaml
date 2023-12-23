@@ -99,3 +99,12 @@ affinity: {}
 
 networkpolicy:
   name: "deny-ingress-to-serviceb"
+  ingress:
+    - from:
+        # Allow traffic from all pods in the namespace except those labeled as serviceb
+        - podSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: NotIn
+                values:
+                  - servicea
