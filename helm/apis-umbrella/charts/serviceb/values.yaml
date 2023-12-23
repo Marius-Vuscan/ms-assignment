@@ -43,7 +43,7 @@ securityContext:
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 8080
 
 ingress:
@@ -53,8 +53,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: "msa.testmar.io"
-      paths:
+    - paths:
         - path: /serviceb
           pathType: Prefix
   tls: []
