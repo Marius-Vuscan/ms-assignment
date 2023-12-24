@@ -7,7 +7,7 @@ This document describes the dependency configurations setup. We call dependency 
 - The service principal was configured with the contributor role.
 
 ## Steps
-- go inside the service-principal-creation folder: **infra\modules\dependency-configuration**
+- go inside the dependency-configuration folder: **infra\modules\dependency-configuration**
 - run the init command: ```terraform init```
 - replace the subscription-id placeholder and run the plan command: ```terraform plan -out sp.tfplan -var="subscription_id=<subscription-id>"```
 - replace the subscription-id placeholder and run the apply command: ```terraform apply "sp.tfplan"```
