@@ -14,5 +14,7 @@
       - Used to build images and publish them to the registry. More details about this: [docker-publish](/docs/docker-publish.md)
     - terraform
       - Used to automate the resource configuration. More details about this: [terraform-automatic](/docs/terraform-automatic.md)
+    - terraform destroy
+      - Used to destroy the resource configuration. More details about this: [terraform-destroy](/docs/terraform-destroy.md)
     - deploy to kubernetes
       - Used to deploy the services to Kubernetes using Helm. More details about this: [kubernetes-configuration](/docs/kubernetes-configuration.md)

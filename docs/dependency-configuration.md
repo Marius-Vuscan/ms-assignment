@@ -17,6 +17,9 @@ This document describes the dependency configurations setup. We call dependency 
   - ARM_SUBSCRIPTION_ID: subscription-id
   - ARM_TENANT_ID: tenant_id
 
+### Cleanup steps
+- To remove the resources after we are done using them, we run: ```terraform destroy```
+
 # Storage account
 - The state of terraform has to be stored remotely as every pipeline run will start fresh with no knowledge of the previous state. For this purpose, the storage account was chosen.
 - Again, the storage account creation as well as the sas token were created using Terraform script that was executed locally.
