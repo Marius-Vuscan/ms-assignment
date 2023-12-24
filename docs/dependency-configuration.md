@@ -22,7 +22,7 @@ This document describes the dependency configurations setup. We call dependency 
 
 # Storage account
 - The state of terraform has to be stored remotely as every pipeline run will start fresh with no knowledge of the previous state. For this purpose, the storage account was chosen.
-- Again, the storage account creation as well as the sas token were created using Terraform script that was executed locally.
+- Again, the storage account creation as well as the sas token were created using Terraform script that was executed locally. The state of the local script run was kept locally.
 
 ## Steps
 - we assume that the terraform commands were already executed as part of the previous dependency's configuration.
