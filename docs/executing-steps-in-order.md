@@ -4,7 +4,7 @@
 # Steps
 1. Execute the [dependency-configuration steps](dependency-configuration.md).
     - This will prepare everything that is required for the pipelines.
-2. Run the [terraform pipeline](../.github/workflows/terraform.yml) by making a change in the infra folder. 
+2. Run the [terraform pipeline](../.github/workflows/terraform.yml) by making a change in the /modules/resources-configuration/ folder. 
     - This will ensure that every Cloud resource required is created.
     - These docs contain the details of that configuration: [resources-configuration](resources-configuration.md)
 3. Run the [docker publish pipeline](../.github/workflows/docker-publish.yml) by making a change in the proj folder.
