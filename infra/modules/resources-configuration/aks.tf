@@ -41,3 +41,4 @@ resource "github_actions_secret" "aks_kube_config" {
   secret_name     = "AKS_KUBE_CONFIG"
   plaintext_value = base64encode(azurerm_kubernetes_cluster.aks.kube_config_raw)
 }
+
