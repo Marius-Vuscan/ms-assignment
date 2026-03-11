@@ -1,6 +1,7 @@
 # Intro
-- This repository contains the implementation of the Microsoft assignment for the job interview.
+This repository contains the implementation of the Microsoft assignment for the job interview. 
 
+## Requirement
 Create Kubernetes cluster in Azure, AWS or GCP, using Pulumi or Terraform:
 
 1. Setup K8s cluster with the latest stable version, with RBAC enabled.
@@ -12,7 +13,7 @@ Create Kubernetes cluster in Azure, AWS or GCP, using Pulumi or Terraform:
 4. Cluster should have NGINX Ingress controller deployed, and corresponding ingress rules for Service A and Service B.
 5. Service A should not be able to communicate with Service B.
 
-General Guidelines:
+## General Guidelines
 - The following cluster buildout should be secure, repeatable and automated as much as possible.
 - Share the source code and any other related artifacts to this task (YAMLs, templates, etc.) in a GitHub repo. The repo should contain a Readme file, with a detailed "How-To" guide.
 
