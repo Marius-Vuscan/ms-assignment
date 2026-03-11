@@ -1,5 +1,5 @@
 # Intro
-This repository contains the implementation of the Microsoft assignment for the Infra & Dev Exp Engineer job interview. 
+This repository contains the implementation of a big tech company assignment for the Infra & Dev Exp Engineer job interview. 
 
 ## Requirement
 Create Kubernetes cluster in Azure, AWS or GCP, using Pulumi or Terraform:
